@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title')Master Aplikasi POS</title>
-
+  <title>@yield('title') | Aplikasi POS</title>
+  <link rel="shortcut icon" href="{{ asset('/assets') }}/dist/img/logo.png" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('/assets') }}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('/assets') }}/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini sidebar-collapse">
 <!-- Site wrapper -->
@@ -23,7 +23,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
+        <a href="." class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -64,7 +64,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="{{ asset('/assets') }}/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -80,7 +80,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{ asset('/assets') }}/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -96,7 +96,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{ asset('/assets') }}/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -156,9 +156,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
-      <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="." class="brand-link">
+      <img src="{{ asset('/assets') }}/dist/img/logo.png" alt="WebPro" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">WebPro 7</span>
     </a>
 
     <!-- Sidebar -->
@@ -166,10 +166,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('/assets') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Thoriq Akhtar Febrian</a>
         </div>
       </div>
 
@@ -191,44 +191,23 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="." class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="/category" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="{{ '/categories' }}" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
               <p>
                 Kategori
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/product" class="nav-link">
+            <a href="{{ '/products' }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Produk
@@ -236,12 +215,39 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/user" class="nav-link">
+            <a href="{{ '/customer' }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                PEngguna
+                Pelanggan
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/order' }}" class="nav-link">
+              <i class="nav-icon fa fa-shopping-basket"></i>
+              <p>
+                Pesanan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/user' }}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Pengguna
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <i class="nav-icon fa fa-sign-out-alt"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{csrf_field()}}
+            </form>
           </li>
         </ul>
       </nav>
@@ -250,68 +256,13 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Collapsed Sidebar</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Layout</a></li>
-              <li class="breadcrumb-item active">Collapsed Sidebar</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Default box -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Title</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                Start creating your amazing application!
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                Footer
-              </div>
-              <!-- /.card-footer-->
-            </div>
-            <!-- /.card -->
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+  @yield('content')
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+      <b>Version</b> 0.1.1
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2024-<?= date('Y') ?> <a href="https://abudata.com" target="blank">WebPro</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -323,12 +274,12 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="{{ asset('/assets') }}/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('/assets') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="assets/dist/js/adminlte.min.js"></script>
+<script src="{{ asset('/assets') }}/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="assets/dist/js/demo.js"></script>
+{{-- <script src="{{ asset('/assets') }}/dist/js/demo.js"></script> --}}
 </body>
 </html>
